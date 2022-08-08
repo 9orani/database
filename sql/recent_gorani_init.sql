@@ -7,18 +7,10 @@
 
 -- Started on 2022-08-08 10:08:20 UTC
 
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
 
+\connect postgres
 DROP DATABASE gorani_database;
+
 --
 -- TOC entry 3370 (class 1262 OID 40961)
 -- Name: gorani_database; Type: DATABASE; Schema: -; Owner: gorani_user
@@ -421,4 +413,3 @@ ALTER TABLE ONLY gorani_schema.room_player_join
 --
 -- PostgreSQL database dump complete
 --
-
