@@ -5,7 +5,7 @@
 -- Dumped from database version 14.3 (Debian 14.3-1.pgdg110+1)
 -- Dumped by pg_dump version 14.2
 
--- Started on 2022-08-08 01:59:31 UTC
+-- Started on 2022-08-08 10:08:20 UTC
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -171,7 +171,8 @@ CREATE TABLE gorani_schema.room (
     max_player integer DEFAULT 1,
     creator_player_id integer DEFAULT 1 NOT NULL,
     visit_url character varying(500) NOT NULL,
-    current_player integer DEFAULT 0 NOT NULL
+    current_player integer DEFAULT 0 NOT NULL,
+    visit_port integer
 );
 
 
@@ -267,9 +268,9 @@ INSERT INTO gorani_schema.player (id, login_id, password, username, email, regis
 -- Data for Name: room; Type: TABLE DATA; Schema: gorani_schema; Owner: gorani_user
 --
 
-INSERT INTO gorani_schema.room (id, name, visit_code, create_time, max_player, creator_player_id, visit_url, current_player) VALUES (1, NULL, NULL, NULL, NULL, 1, 'http://220.92.222.100:6000', 0);
-INSERT INTO gorani_schema.room (id, name, visit_code, create_time, max_player, creator_player_id, visit_url, current_player) VALUES (2, NULL, NULL, NULL, NULL, 1, 'http://220.92.222.100:6001', 0);
-INSERT INTO gorani_schema.room (id, name, visit_code, create_time, max_player, creator_player_id, visit_url, current_player) VALUES (3, NULL, NULL, NULL, NULL, 1, 'http://220.92.222.100:6002', 0);
+INSERT INTO gorani_schema.room (id, name, visit_code, create_time, max_player, creator_player_id, visit_url, current_player, visit_port) VALUES (1, NULL, NULL, NULL, NULL, 1, 'http://220.92.222.100', 0, 6000);
+INSERT INTO gorani_schema.room (id, name, visit_code, create_time, max_player, creator_player_id, visit_url, current_player, visit_port) VALUES (2, NULL, NULL, NULL, NULL, 1, 'http://220.92.222.100', 0, 6001);
+INSERT INTO gorani_schema.room (id, name, visit_code, create_time, max_player, creator_player_id, visit_url, current_player, visit_port) VALUES (3, NULL, NULL, NULL, NULL, 1, 'http://220.92.222.100', 0, 6002);
 
 
 --
@@ -415,7 +416,7 @@ ALTER TABLE ONLY gorani_schema.room_player_join
     ADD CONSTRAINT room_player_join_room_id_fkey FOREIGN KEY (room_id) REFERENCES gorani_schema.room(id);
 
 
--- Completed on 2022-08-08 01:59:31 UTC
+-- Completed on 2022-08-08 10:08:20 UTC
 
 --
 -- PostgreSQL database dump complete
