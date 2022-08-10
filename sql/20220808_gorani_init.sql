@@ -18,6 +18,7 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
+\connect postgres
 DROP DATABASE gorani_database;
 --
 -- TOC entry 3370 (class 1262 OID 40961)
